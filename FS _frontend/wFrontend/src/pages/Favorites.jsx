@@ -12,7 +12,7 @@ function Favorites() {
 
   useEffect(() => {
     fetchFavorites()
-  })
+  },[])
 
   const fetchFavorites = async () => {
     try {
