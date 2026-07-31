@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: import.meta.env.VITE_URL,
+    baseURL: "https://weather-webapp-1rdy.onrender.com/api",
     withCredentials: true,
 });
 
