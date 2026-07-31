@@ -36,7 +36,7 @@ export const refreshToken=async(req,res)=>{
         .cookie("accessToken",accessToken,{
             httpOnly:true,
             secure:"production",
-            sameSite:"lax",
+            sameSite:"None",
         })
         .status(200)
         .json({accessToken})
