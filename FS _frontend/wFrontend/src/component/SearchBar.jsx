@@ -22,17 +22,20 @@ const SearchBar=({onSearch})=>{
             Weather Forecast
         </h1>
 
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
             <input type="text" placeholder="Enter city..."
             value={city}
             onChange={(e)=>setCity(e.target.value)}
             className="flex-1 rounded-xl border p-4 text-lg shadow-md focus:outline-none focus:ring-2 focus:ring-sky-500 dark:bg-slate-700 dark:text-white dark:border-slate-600"
             />
+
+            <div className="flex justify-center">
              <button
-          className="bg-sky-600 text-white px-8 rounded-xl hover:bg-sky-700 transition dark:bg-indigo-600 dark:hover:bg-indigo-700"
-        >
+          className="w-50 sm:w-auto py-4 px-8 rounded-xl bg-sky-600 text-white hover:bg-sky-700 transition dark:bg-indigo-600 dark:hover:bg-indigo-700 justify-center"
+            >
           Search
         </button>
+        </div>
         </div>
     </form>
     )
