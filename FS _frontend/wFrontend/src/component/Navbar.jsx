@@ -70,12 +70,19 @@ const Navbar = () => {
                             ease-in-out
                             ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}
                         `}>
-                            <div className="flex justify-between mt-10">
+                            <div className="flex flex-col mt-10">
+                                <div className="">
+                                <div className="flex items-center justify-between h-10 bg-linear-to-br from-sky-100 to-blue-200 dark:from-slate-400 dark:to-slate-500">
+                                    <h2 className="ml-7.5 text-black dark:text-white font-bold">Weather Menu</h2>
+                                    <button onClick={()=>setIsMenuOpen(false)} className="mr-6  text-black font-extrabold dark:text-white">X</button>
+                                </div>
+                            </div>
 
                             <div className="flex flex-col gap-6 pl-8 pt-7">
+                                
                                 <Link to="/favorites" className="hover:text-grey-200 transition"
                             onClick={() => setIsMenuOpen}
-                        >
+                            >
                             Favorites
                         </Link>
                         <Link to="/history" className="hover:text-grey-200 transition" onClick={() => setIsMenuOpen}>
@@ -100,11 +107,6 @@ const Navbar = () => {
                             <option value="light">Light</option>
                             <option value="dark">Dark</option>
                         </select>
-                            </div>
-                            <div className="mr-6">
-                                <div className="flex items-center justify-between mb-8">
-                                    <button onClick={()=>setIsMenuOpen(false)}>X</button>
-                                </div>
                             </div>
                             </div>
                     </div>
