@@ -7,8 +7,10 @@ export const optionalAuth = async (req, res, next) => {
     if (!token) return next(); // no user, just skip
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await User.findById(decoded.id).select("-password -refreshToken");
-
+    const user = await User.findById(decoded.
+    _id).select("-password -refreshToken");
+    console.log("optional user",user);
+    
     if (user) {
       req.user = user; // attach user if valid
     }
