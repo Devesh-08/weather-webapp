@@ -8,7 +8,7 @@ export const getWeather=asyncHandler(async(req,res)=>{
             // console.log("[Route Hit] City:", req.params.city);
             
             if(req.user){
-            await Search.create({
+            const search = await Search.create({
                 user:req.user._id,
                 city
             })}
@@ -31,7 +31,8 @@ export const getWeather=asyncHandler(async(req,res)=>{
         
             res.status(200).json({
                 success:true,
-                weather
+                weather,
+                search
             })
         } catch (error) {
             res.status(500).json({error:"Failed to fetch weather data"})
